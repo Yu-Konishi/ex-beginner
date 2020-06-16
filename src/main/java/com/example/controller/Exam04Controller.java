@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,9 +32,10 @@ public class Exam04Controller {
 		}
 		
 		User user = new User();
-		user.setName(form.getName());
+		BeanUtils.copyProperties(form, user);
 		user.setAge(Integer.parseInt(form.getAge()));
-		user.setComment(form.getComment());
+//		user.setName(form.getName());
+//		user.setComment(form.getComment());
 		model.addAttribute(user);
 		return "exam04-result";
 	}
