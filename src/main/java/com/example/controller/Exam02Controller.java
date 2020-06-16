@@ -19,7 +19,7 @@ public class Exam02Controller {
 	}
 	
 	@RequestMapping("/sum")
-	public String sum(int num1, int num2) {
+	public String sum(Integer num1, Integer num2) {
 		int result = num1 + num2;
 		session.setAttribute("num1", num1);
 		session.setAttribute("num2", num2);
